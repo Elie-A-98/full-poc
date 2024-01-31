@@ -2,7 +2,7 @@
 
 What I did is create an apps folder which will contain multiple apps. So the root workspace is `full-poc/` and the workspaces are `apps/*`. Then:
 - I cloned the solito with expo router starter template and intor test-app
-- Removed the `.yarn` and `.yarn.lock` files
+- Removed the `.yarn` and `.yarn.lock` files and the `packageManager` key from `test-app/package.json` to use the one of the root workspace (`full-poc/package.json`)
 - Updated the workspaceRoot in `metro.config.js` of the expo app to be `path.resolve(projectRoot, '../..')`
 - Did `yarn expo install expo-image --yarn` in the `test-app/apps/expo` to download expo-image package and fix the previous error
 - Added `.../test-app/packages/app/public/images/test3.jpg` and imported it into `.../test-app/packages/app/features/home/screen.tsx` and used It as a source for the `<SolitoImage />` component
